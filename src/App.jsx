@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ShopAll from "./pages/ShopAll";
-import BestSellers from "./pages/BestSellers";
-import ActiveQx from "./pages/ActiveQx";
-import Artisanal from "./pages/Artisanal";
-import Kids from "./pages/Kids";
-import About from "./pages/About";
-import  Search  from "./pages/Search";
-import Cart from "./pages/Cart";
-import Login from "./pages/Login";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import ShopAll from "./pages/Shopall/ShopAll";
+import BestSellers from "./pages/BestSeller/BestSellers";
+import ActiveQx from "./pages/ActiveQx/ActiveQx";
+import Artisanal from "./pages/Artisanal/Artisanal";
+import Kids from "./pages/Kids/Kids";
+import About from "./pages/About/About";
+import  Search  from "./pages/Search/Search";
+import Cart from "./pages/Cart/Cart";
+import Login from "./pages/Login/Login";
 
 export default function App() {
   return (
