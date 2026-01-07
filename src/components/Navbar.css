@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   position: fixed;
   top: 0;
   width: 100%;
@@ -48,6 +48,105 @@
     display: flex;
   }
   .menu-btn {
+    display: none;
+  }
+} */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 5%;
+  border-bottom: 1px solid #eee;
+  background: white;
+}
+
+/* LOGO */
+.logo a {
+  font-size: 28px;
+  font-weight: 900;
+  text-decoration: none;
+  color: black;
+}
+
+/* CENTER MENU */
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT SIDE */
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  padding: 7px 10px;
+  gap: 8px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+}
+
+/* LOGIN */
+.login {
+  text-decoration: none;
+  color: black;
+}
+
+/* ICON BUTTONS */
+.icon-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profile {
+  background: black;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+/* CART BADGE */
+.cart {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: white;
+  border: 1px solid black;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 50%;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .nav-links {
     display: none;
   }
 }

@@ -1,0 +1,103 @@
+.footer {
+  background: #ffffff;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  width: 92%;
+  max-width: 1300px;
+  background: #1f1f1f;
+  color: white;
+  border-radius: 15px;
+  padding: 40px 50px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+
+.footer-col h3 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  margin: 6px 0;
+  color: #e4e4e4;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.footer-col p:hover {
+  text-decoration: underline;
+}
+
+.email-input {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  background: none;
+  color: white;
+  margin: 10px 0 15px 0;
+  outline: none;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.subscribe-btn {
+  width: 100%;
+  padding: 10px 0;
+  background: #3786ef;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  opacity: 0.9;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 45px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+@media(max-width: 950px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 600px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

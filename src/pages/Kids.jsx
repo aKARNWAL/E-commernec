@@ -1,4 +1,4 @@
-export default function Testimonials() {
+export default function Kids() {
   return (
     <section className="section">
       <div className="container">

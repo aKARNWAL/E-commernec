@@ -1,4 +1,4 @@
-export default function Portfolio() {
+export default function ActiveQx() {
   return (
     <section className="section">
       <div className="container">

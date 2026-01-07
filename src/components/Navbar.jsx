@@ -1,40 +1,39 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header className="navbar">
-      <div className="nav-inner container">
-        <div className="logo">BrandName</div>
-
-        <nav className="nav-links">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/portfolio">Portfolio</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/testimonials">Testimonials</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-        </nav>
-
-        <button className="menu-btn" onClick={() => setOpen(!open)}>
-          <Menu />
-        </button>
+    <header className="nav">
+      <div className="logo">
+        <Link to="/">QUENX.</Link>
       </div>
+      <nav className="nav-links">
+        <Link to="/shop">Shop All</Link>
+        <Link to="/best-sellers">Best Sellers</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/active-qx">Active QX</Link>
+        <Link to="/artisanal">Artisanal</Link>
+        <Link to="/kids">Kids</Link>
+        
+      </nav>
 
-      {open && (
-        <div className="mobile-menu">
-          <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
-          <NavLink to="/services" onClick={() => setOpen(false)}>Services</NavLink>
-          <NavLink to="/portfolio" onClick={() => setOpen(false)}>Portfolio</NavLink>
-          <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
-          <NavLink to="/testimonials" onClick={() => setOpen(false)}>Testimonials</NavLink>
-          <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
+      <div className="right-side">
+        <div className="search-box">
+          <span className="icon"></span>
+          <input type="text" placeholder="Search" />
         </div>
-      )}
+
+        <Link to="/login" className="login">Log In</Link>
+
+        <div className="icon-btn profile"></div>
+
+        <div className="icon-btn"></div>
+
+        <div className="icon-btn cart">
+          
+          <span className="badge"></span>
+        </div>
+      </div>
     </header>
   );
 }
