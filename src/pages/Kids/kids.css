@@ -1,0 +1,79 @@
+.kids-page{
+  padding: 30px 50px;
+}
+
+.kids-page h1{
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.kids-layout{
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+/* LEFT MENU */
+.kids-sidebar ul{
+  list-style: none;
+  padding: 0;
+}
+
+.kids-sidebar li{
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.kids-sidebar li.active{
+  color: blue;
+  font-weight: bold;
+}
+
+/* RIGHT SIDE */
+.kids-products{
+  flex: 1;
+}
+
+.kids-topbar{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.kids-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.kids-card{
+  padding: 10px;
+  border-radius: 18px;
+  background: #f5f7fb;
+  text-decoration: none;
+  color: black;
+}
+
+.kids-card img{
+  width: 100%;
+  border-radius: 12px;
+}
+
+.badge{
+  background: dodgerblue;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.old{
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 5px;
+}
+
+.new{
+  color: dodgerblue;
+  font-weight: bold;
+}
