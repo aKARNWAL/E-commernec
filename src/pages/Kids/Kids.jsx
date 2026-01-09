@@ -1,20 +1,64 @@
-export default function Kids() {
-  return (
-    <section className="section">
-      <div className="container">
-        <h2 className="title center">What Clients Say</h2>
-        <p className="subtitle center">Clients hamse khush rehte hain 😄</p>
+import "./Kids.css";
+import { Link } from "react-router-dom";
+import kidsProducts from "../Data/products.js";
 
-        <div className="grid-3">
-          {[1, 2, 3].map((n) => (
-            <div key={n} className="card">
-              <p>“Amazing experience! Highly recommended.”</p>
-              <strong>Client Name</strong>
-              <div className="muted">Company</div>
-            </div>
-          ))}
-        </div>
+export default function Kids() {
+  const handleSort = (e) => {
+    const value = e.target.value;
+
+    if (value === "low") {
+      kidsProducts.sort((a, b) => a.price - b.price);
+    } else if (value === "high") {
+      kidsProducts.sort((a, b) => b.price - a.price);
+    }
+  };
+
+  return (
+    <div className="kids-page">
+      <h1>Kids shoes</h1>
+
+      <div className="kids-layout">
+        <aside className="kids-sidebar">
+          <h3>Browse by</h3>
+
+          <ul>
+            <li>All Products</li>
+            <li>Active QX</li>
+            <li>Artisanal</li>
+            <li>Best Sellers</li>
+            <li className="active">Kids shoes</li>
+          </ul>
+        </aside>
+
+        <main className="kids-products">
+          <div className="kids-topbar">
+            <p>{kidsProducts.length} products</p>
+
+            <select onChange={handleSort}>
+              <option value="recommended">Recommended</option>
+              <option value="low">Price: Low → High</option>
+              <option value="high">Price: High → Low</option>
+            </select>
+          </div>
+
+          <div className="kids-grid">
+            {kidsProducts.map((p) => (
+              <Link key={p.id} className="kids-card" to={`/product/${p.id}`}>
+                {p.tag && <span className="badge">{p.tag}</span>}
+
+                <img src={p.image} alt={p.name} />
+
+                <h4>{p.name}</h4>
+
+                <p>
+                  <span className="old">${p.oldPrice}</span>
+                  <span className="new">${p.price}</span>
+                </p>
+              </Link>
+            ))}
+          </div>
+        </main>
       </div>
-    </section>
+    </div>
   );
 }
