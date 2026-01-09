@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "./ShopAll.css";
 import productsData from "../Data/products.js";
+
+import ProductCard from "../../components/ProductCard/ProductCard.jsx";
+
+
+
 
 export default function ShopAll() {
   const [maxPrice, setMaxPrice] = useState(150);
@@ -9,28 +13,23 @@ export default function ShopAll() {
 
   const handleSort = (e) => {
     const value = e.target.value;
-    let sorted = [...products];
+    let sorted = [...productsData];
 
     if (value === "low") {
       sorted.sort((a, b) => a.price - b.price);
     } else if (value === "high") {
       sorted.sort((a, b) => b.price - a.price);
-    } else {
-      sorted = [...productsData]; // Recommended = original order
     }
 
     setProducts(sorted);
   };
 
-  const filteredProducts = products.filter(
-    (p) => p.price <= maxPrice
-  );
+  const filteredProducts = products.filter((p) => p.price <= maxPrice);
 
   return (
     <div className="shop-page">
       <aside className="sidebar">
         <h3>Browse by</h3>
-
         <ul>
           <li className="active">All Products</li>
           <li>Active QX</li>
@@ -56,7 +55,6 @@ export default function ShopAll() {
       <main className="products-area">
         <div className="header">
           <h1>All Products</h1>
-
           <p>{filteredProducts.length} products</p>
 
           <select onChange={handleSort}>
@@ -68,27 +66,7 @@ export default function ShopAll() {
 
         <div className="grid">
           {filteredProducts.map((product) => (
-            <Link
-              to={`/product/${product.id}`}
-              key={product.id}
-              className="card"
-            >
-              <div className="image-box">
-                {product.tag && <span className="badge">{product.tag}</span>}
-                <img src={product.image} alt={product.name} />
-              </div>
-
-              <h4>{product.name}</h4>
-
-              {product.oldPrice ? (
-                <p>
-                  <span className="old">${product.oldPrice}</span>
-                  <span className="new"> ${product.price}</span>
-                </p>
-              ) : (
-                <p>${product.price}</p>
-              )}
-            </Link>
+            <ProductCard key={product.id} product={product} cardClass="card" />
           ))}
         </div>
       </main>

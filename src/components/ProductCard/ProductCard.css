@@ -1,0 +1,65 @@
+/* CARD */
+.card,
+.kids-card {
+  display: block;
+  background: #f5f7fb;
+  border-radius: 18px;
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s ease;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hover */
+.card:hover,
+.kids-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* Image container */
+.image-box {
+  width: 100%;
+  height: 180px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image */
+.card img,
+.kids-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e7f1ff;
+  color: #0075ff;
+  padding: 5px 12px;
+  border-radius: 25px;
+  font-size: 12px;
+}
+
+/* Price */
+.old {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 6px;
+}
+
+.new {
+  color: #0075ff;
+  font-weight: bold;
+}

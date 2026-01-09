@@ -1,6 +1,7 @@
 import "./Kids.css";
-import { Link } from "react-router-dom";
 import kidsProducts from "../Data/products.js";
+import ProductCard from "../../components/ProductCard/ProductCard.jsx";
+
 
 export default function Kids() {
   const handleSort = (e) => {
@@ -20,7 +21,6 @@ export default function Kids() {
       <div className="kids-layout">
         <aside className="kids-sidebar">
           <h3>Browse by</h3>
-
           <ul>
             <li>All Products</li>
             <li>Active QX</li>
@@ -42,19 +42,12 @@ export default function Kids() {
           </div>
 
           <div className="kids-grid">
-            {kidsProducts.map((p) => (
-              <Link key={p.id} className="kids-card" to={`/product/${p.id}`}>
-                {p.tag && <span className="badge">{p.tag}</span>}
-
-                <img src={p.image} alt={p.name} />
-
-                <h4>{p.name}</h4>
-
-                <p>
-                  <span className="old">${p.oldPrice}</span>
-                  <span className="new">${p.price}</span>
-                </p>
-              </Link>
+            {kidsProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                cardClass="kids-card"
+              />
             ))}
           </div>
         </main>
