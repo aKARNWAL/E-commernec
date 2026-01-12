@@ -1,11 +1,8 @@
 import { useState } from "react";
 import "./ShopAll.css";
-import productsData from "../Data/products.js";
-
-import ProductCard from "../../components/ProductCard/ProductCard.jsx";
-
-
-
+import productsData from "../../Data/products";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import LeftPannel from "../../components/LeftPannel/LeftPannel";
 
 export default function ShopAll() {
   const [maxPrice, setMaxPrice] = useState(150);
@@ -15,42 +12,17 @@ export default function ShopAll() {
     const value = e.target.value;
     let sorted = [...productsData];
 
-    if (value === "low") {
-      sorted.sort((a, b) => a.price - b.price);
-    } else if (value === "high") {
-      sorted.sort((a, b) => b.price - a.price);
-    }
+    if (value === "low") sorted.sort((a, b) => a.price - b.price);
+    if (value === "high") sorted.sort((a, b) => b.price - a.price);
 
     setProducts(sorted);
   };
 
-  const filteredProducts = products.filter((p) => p.price <= maxPrice);
+  const filteredProducts = products.filter(p => p.price <= maxPrice);
 
   return (
     <div className="shop-page">
-      <aside className="sidebar">
-        <h3>Browse by</h3>
-        <ul>
-          <li className="active">All Products</li>
-          <li>Active QX</li>
-          <li>Artisanal</li>
-          <li>Best Sellers</li>
-          <li>Kids shoes</li>
-        </ul>
-
-        <h3>Filter by</h3>
-        <label>Price</label>
-
-        <input
-          type="range"
-          min="50"
-          max="150"
-          value={maxPrice}
-          onChange={(e) => setMaxPrice(Number(e.target.value))}
-        />
-
-        <p>${maxPrice}</p>
-      </aside>
+      <LeftPannel maxPrice={maxPrice} setMaxPrice={setMaxPrice} />
 
       <main className="products-area">
         <div className="header">
